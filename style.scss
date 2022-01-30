@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+//reset css (basic code)
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+:root {
+	color-scheme: dark;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	
+	.container {
+		width: 100%;
+		height: 100vh;
+		position: relative;
+		overflow: hidden;
+	
+		.info-box {
+			background-color: #202124;
+			width: 400px;
+			height: 100vh;
+			position: absolute;
+			top: 0;
+			left: -100%;
+			transition: 1s;
+			box-shadow: 5px 8px 18px -3px rgba(102,102,102,0.23);
+			-webkit-box-shadow: 5px 8px 18px -3px rgba(102,102,102,0.23);
+			-moz-box-shadow: 5px 8px 18px -3px rgba(102,102,102,0.23);
+			z-index: 99;
+	
+			&.active {
+				left: 0;
+			}
+
+			.info {
+				display: block;
+
+				img {
+					margin-top: 15px;
+					margin-left: 24px;
+					width: 150px;
+					height: auto;
+				}
+	
+				i {
+					color: #BB86FC;
+					font-size: 14px;
+				}
+	
+				.unvalid {
+					color: #bbbbbb;
+				}
+	
+				.n-title {
+					// background-color: red;
+					padding-left: 24px;
+					font-size: 22px;
+					font-weight: 500;
+					padding-top: 25px;
+				}
+	
+				.rating-stars {
+					padding-top: 25px;
+					padding-left: 24px;
+					padding-bottom: 25px;
+					display: flex;
+					align-items: center;
+					gap: 15px;
+					border-bottom: 1px solid #49494b;
+	
+					& > div {
+						gap: 5px;
+					}
+	
+					p {
+						color: #bbbbbb;
+					}
+				}
+	
+				.list-crime {
+					padding-left: 24px;
+					padding-top: 25px;
+					padding-right: 24px;
+					padding-bottom: 25px;
+					border-bottom: 1px solid #49494b;
+					cursor: pointer;
+	
+					display: flex;
+					align-items: center;
+					transition: 0.2s;
+	
+					&:hover {
+						background-color: #18181b;
+	
+						i {
+							color: #ac67ff;
+						}
+					}
+	
+					& > div {
+						p:first-of-type {
+							font-size: 18px;
+							font-weight: 500;
+						}	
+		
+						p:last-of-type {
+							font-size: 14px;
+							color: #bbbbbb;
+							margin-top: 15px;
+						}
+					}
+	
+					i {
+						font-size: 24px;
+					}
+				}
+	
+				.contact {
+					padding-top: 25px;
+					padding-bottom: 25px;
+					padding-left: 24px;
+					display: flex;
+					flex-direction: column;
+					gap: 25px;
+					overflow: hidden;
+	
+					& > div {
+						display: flex;
+						align-items: flex-start;
+						gap: 15px;
+	
+						p {
+							font-size: 14px;
+							color: #ece9e9;
+						}
+	
+						i {
+							font-size: 24px;
+						}
+					}
+				}
+
+				&.active {
+					display: none;
+				}
+			}
+
+			.crime-details {
+				display: none;
+
+				&.active {
+					display: block;
+				}
+
+				.crime-header {
+					color: white;
+					display: flex;
+					padding-left: 24px;
+					padding-top: 30px;
+					padding-bottom: 30px;
+					align-items: center;
+					gap: 25px;
+					border-bottom: 1px solid #49494b;
+
+					h2 {
+						font-size: 20px;
+						font-weight: 500;
+					}
+
+					i {
+						font-size: 24px;
+						cursor: pointer;
+
+						&:hover {
+							color: rgb(197, 197, 197);
+						}
+					}
+				}
+
+				.all-crimes {
+					padding-left: 24px;
+					padding-top: 25px;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: flex-start;
+					gap: 15px;
+
+					p {
+						font-size: 14px;
+						color: #ece9e9;
+					}
+					
+					span {
+						color: #BB86FC;
+						margin-right: 15px;
+						font-size: 20px;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	
+		#map {
+			width: 100%;
+			height: 100vh;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 0;
+		}
+
+		.hud {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			display: flex;
+			flex-direction: row;
+			background-color: #202124;
+			border-radius: 100px;
+			color: white;
+			padding: 30px 50px;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+			font-size: 18px;
+			pointer-events:none;
+			opacity: 1;
+			transition: 0.3s;
+
+			span {
+				color: #BB86FC;
+			}
+
+			&.active {
+				opacity:0;
+			}
+
+			i {
+				font-size: 28px;
+				color: #BB86FC;
+			}
+		}
+	}
+}
+
+
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="img/logo_size_invert.jpg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--import leaflet map api css-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Safer</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="info-box">
+            <div class="info">
+                <img src="img/logo_safer.png" alt="logo safer">
+                <div class="n-title"></div>
+                <div class="rating-stars"></div>
+                <div class="list-crime">
+                    <div>
+                        <p>Crime list</p>
+                        <p>See all the crimes that occurred in your neighbourhood</p>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="contact"></div>
+            </div>
+            <div class="crime-details">
+                <div class="crime-header">
+                    <i class="fas fa-arrow-left"></i>
+                    <h2>Crime list</h2>
+                </div>
+                <div class="all-crimes"></div>
+            </div>
+        </div>
+        <div id="map"></div>
+        <div class="hud">
+            <!-- <i class="fas fa-mouse"></i> -->
+            <i class="fas fa-compass"></i>
+            <p>Click the map to check if your place is safe <span>(take time to load)</span></p>
+        </div>
+    </div>
+
+    <!--import leaflet map api js-->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
